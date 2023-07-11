@@ -1,0 +1,21 @@
+<table class="table">
+    <thead class="thead-light">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Cedula</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Opciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of arrUsers">
+        <th scope="row">{{user.id}}</th>
+        <td>{{user.cedula}}</td>
+        <td>{{user.nombre}}</td>
+        <td class="d-flex justify-content-center">
+            <button [routerLink]="['/users/edit/',user.id]" class="mr-2 btn btn-primary">Editar</button>
+            <button class="btn btn-danger" (click)="deleteUser(user.id)">Eliminar</button>
+        </td>
+      </tr>
+      
+  </table>

@@ -1,0 +1,23 @@
+<form>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="inputNombre">Nombre Completo:</label>
+            <!-- ngModel me ayuda a conectar los campos de un formulario con un objeto en el ts -->
+            <input type="text" class="form-control" id="inputNombre" name="nombre"
+            [(ngModel)]="user.nombre" placeholder="Ej: Salvador Ordoñez" autofocus>
+        </div>
+        <div class="form-group col-md-6">
+            <label for="inputCedula">Cédula:</label>
+            <input type="text" class="form-control" id="inputCedula" name="cedula"
+            [(ngModel)]="user.cedula" placeholder="Ej: 0930230776">
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="inputCelular">Celular:</label>
+            <input type="text" class="form-control" id="inputCelular" name="celular"
+            [(ngModel)]="user.celular" placeholder="Ej: 0978699517">
+        </div>
+    </div>
+    <button type="submit" class="btn btn-primary" (click)="edit ? updateUser(user.id) : saveUser()">Guardar</button>
+</form>
