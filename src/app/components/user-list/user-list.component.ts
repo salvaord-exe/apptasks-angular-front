@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 //Se importa el servicio para consumir la API
-import { UserService } from '../../services/user.service';
-import { User } from '../../models/User';
+import { TaskService } from 'src/app/services/user.service';
+import { Task } from 'src/app/models/Task';
 import { Router } from '@angular/router';
 
 @Component({
@@ -11,34 +11,34 @@ import { Router } from '@angular/router';
 })
 export class UserListComponent implements OnInit {
 
-  arrUsers: any = [];
+  arrTasks: any = [];
 
   //El private instancia el servicio en el constructor para poder usarlo
   constructor(
     private router: Router,
-    private userService: UserService
+    private taskService: TaskService
   ) { }
 
   ngOnInit(): void {
 
-    this.listUsers();
+    this.listTasks();
 
   }
 
-  listUsers() {
-    this.userService.listUser().subscribe(
+  listTasks() {
+    this.taskService.listUser().subscribe(
       res => {
-        this.arrUsers = res;
+        this.arrTasks = res;
       },
       err => console.log(err)
     );
   }
 
   deleteUser(id: string) {
-    this.userService.deleteUser(id).subscribe(
+    this.taskService.deleteUser(id).subscribe(
       res => {
         console.log(res);
-        this.listUsers();
+        this.listTasks();
       },
       err => console.log(err)
     )
@@ -46,7 +46,7 @@ export class UserListComponent implements OnInit {
 
   //Deprecado, se deja para efectos didácticos. La mejor práctica es routerLink
   editUser(id: string) {
-    this.router.navigate([`/users/edit/${id}`]);
+    this.router.navigate([`/tasks/edit/${id}`]);
   }
 
 }

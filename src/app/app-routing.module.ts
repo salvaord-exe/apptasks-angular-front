@@ -1,25 +1,27 @@
 import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { UserListComponent } from './components/user-list/user-list.component';
-import { UserFormComponent } from './components/user-form/user-form.component';
+
+
+import { TaskListComponent } from './components/task-list/task-list.component';
+import { TaskFormComponent } from './components/task-form/task-form.component';
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: '/users',
+    redirectTo: '/tasks',
     pathMatch: 'full'
   },
   {
-    path: 'users',
-    component: UserListComponent
+    path: 'tasks',  
+    component: TaskListComponent
   },
   {
-    path: 'users/add',
-    component: UserFormComponent
+    path: 'tasks/add',
+    component: TaskFormComponent
   },
   {
-    path: 'users/edit/:id',
-    component: UserFormComponent
+    path: 'tasks/edit/:id',
+    component: TaskFormComponent
   }
 ];
 

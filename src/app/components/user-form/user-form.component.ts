@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../../services/user.service';
-import { User } from '../../models/User';
+import { Task } from 'src/app/models/Task';
 //el import de Route me permite manejar enrutadores a otros componentes
 import { Router, ActivatedRoute } from '@angular/router';
 
@@ -18,11 +18,11 @@ export class UserFormComponent implements OnInit {
     private userService: UserService
   ) { }
 
-  user: User = {
+  user: Task = {
     id: '',
-    nombre: '',
-    cedula: '',
-    celular: ''
+    title: '',
+    description: ''
+    
   }
 
   edit: boolean = false;

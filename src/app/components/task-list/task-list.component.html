@@ -1,0 +1,21 @@
+<table class="table">
+    <thead class="thead-light">
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Title</th>
+        <th scope="col">Description</th>
+        <th scope="col">Opciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let task of arrTasks">
+        <th scope="row">{{task.id}}</th>
+        <td>{{task.title}}</td>
+        <td>{{task.description}}</td>
+        <td class="d-flex justify-content-center">
+            <button [routerLink]="['/tasks/edit/',task.id]" class="mr-2 btn btn-primary">Editar</button>
+            <button class="btn btn-danger" (click)="deleteTask(task.id)">Eliminar</button>
+        </td>
+      </tr>
+      
+  </table>

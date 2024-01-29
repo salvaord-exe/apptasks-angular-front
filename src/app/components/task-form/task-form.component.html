@@ -1,0 +1,21 @@
+<h3>Gestión de Formulario</h3>
+<form>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="inputTitle">Titulo:</label>
+            <input type="text" class="form-control" name="title" id="inputTitle"
+            [(ngModel)]="task.title">
+        </div>
+
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="inputDescription">Descripcion:</label>
+            <textarea class="form-control" name="description" id="inputDescription" cols="30" rows="10"
+            [(ngModel)]="task.description"></textarea>
+        </div>
+    </div>
+    <button type="submit" class="btn btn-primary" (click)="edit? updateTask(task.id) : saveTask()" >Guardar</button>
+    
+    
+</form>

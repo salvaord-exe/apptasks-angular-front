@@ -10,18 +10,21 @@ import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
-import { UserFormComponent } from './components/user-form/user-form.component';
-import { UserListComponent } from './components/user-list/user-list.component';
 
-import { UserService } from './services/user.service';
+import { TaskService } from './services/task.service';
 import { Router, RouterModule } from '@angular/router';
+import { TaskListComponent } from './components/task-list/task-list.component';
+import { TaskFormComponent } from './components/task-form/task-form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavigationComponent,
-    UserFormComponent,
-    UserListComponent
+    TaskListComponent,
+    TaskFormComponent
+    /*UserFormComponent,
+    UserListComponent*/
+    
   ],
   //En imports se agregan todos los modulos utilizados
   imports: [
@@ -33,7 +36,7 @@ import { Router, RouterModule } from '@angular/router';
   ],
   providers: [
     //Se tiene que agregar el servicio del usuario para poder usarlo en los componentes
-    UserService
+    TaskService
   ],
   bootstrap: [AppComponent]
 })
